@@ -13,15 +13,21 @@ void exibirLista(int pontuacoes[], int n, const char* mensagem) {
 
 // Bubble Sort - ordem decrescente
 void bubbleSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] < arr[j + 1]) { // ordem decrescente
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+    while (1) {
+        int trocou = 0;
+        for (int i = 0; i < n - 1; i++){
+            if (arr[i] < arr[i + 1]){ // ordem decrescente
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                trocou = 1;
             }
         }
+        if (trocou == 0) {
+            break;
+        }
     }
+    
 }
 
 // Insertion Sort - ordem decrescente
